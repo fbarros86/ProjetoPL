@@ -58,6 +58,10 @@ def t_NEWLINE(t):
         t.value = None
     return t
 
+
+def t_TAG(t):
+    r'\b(title|script|p|h1|html|body|head)\b'
+    return t
 # Definir as regras para os tokens
 def t_TEXT(t):
     r'.+'
@@ -93,9 +97,7 @@ html(lang="en")
                 p You are amazing
             else
                 p Get on it!
-            p.
-                Pug is a terse and simple templating language with a
-                strong focus on performance and powerful features
+            p.class Pug is a terse and simple templating language with a strong focus on performance and powerful features
 """
 
 lexer.input(data)
