@@ -1,0 +1,39 @@
+- var pageTitle = "My Pug File"
+- var showDetails = 1
+- var loggedIn = 1
+
+doctype html
+html
+    head
+        title= pageTitle
+        meta(charset='UTF-8')
+        link(rel='stylesheet', href='w3.css')
+    body
+        header
+            h1 Welcome to pageTitle
+        section
+            h2 About
+            p This is a sample Pug file for testing purposes.
+
+            if showDetails
+                p Additional details are shown.
+
+            else
+                p No additional details are available.
+
+        section
+            h2 Features
+            ul
+                each c in [1,2,3,4,5]
+                    li item            
+        if loggedIn
+            section
+                h2 User Dashboard
+                p Welcome, username!
+
+    footer
+        p Copyright © currentYear. All rights reserved.
+        p Contact: email
+
+
+

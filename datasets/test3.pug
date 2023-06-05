@@ -1,0 +1,67 @@
+doctype html
+html(lang="en")
+    head
+        script(type='text/javascript').
+            if (foo) bar(1 + 5)
+        - var pageTitle = "titulo que funciona"
+        title= pageTitle
+        link(rel='stylesheet', href='w3.css')
+        meta(charset="utf-8")
+    body
+        h1 Pug - node template engine
+        #container.w3-container
+            - var youAreUsingPug = 0
+            - var youAreNotUsingPug = 1
+            if youAreUsingPug
+                p You are amazing
+            else if youAreNotUsingPug
+                p You are not amazing
+            else
+                p Get on it!
+            p.
+                Pug is a terse and simple templating language with a
+                strong focus on performance
+            // this a comment
+            //- this is a pug comment
+            //
+                this is
+                a block
+                comment
+            //-
+                this a pug comment block
+                this a pug props
+            ul
+                li Item A
+                li Item B
+                li Item C
+            img.w3-spin(src='https://pbs.twimg.com/profile_images/509337850618200065/QSWmBUUK_400x400.png'  alt='login' style='width:100px;height:100px;')
+            - var authenticated = 0
+            - var varia = "authed"
+            if not authenticated
+                p não varia
+            else
+                p estupido
+            input(
+                type='checkbox'
+                name='agreement'
+            )
+            - var varia = 'https://example.com/'
+            a.button
+            .content
+            a#main-link
+            #content
+            - var user = 0
+            p
+                | pipe
+                | not counting indentation
+            #user
+                if user
+                    h2.green Description
+                    p.description user
+                else
+    
+                    h2.w3-red Description
+                    p.description User
+                - var n = 0
+        p
+            include test.txt
